@@ -11,9 +11,12 @@ import Footer from "./Footer.astro"
 
 <!doctype html>
 <html lang="en">
+  <img src="/assets/illustration.jpg" alt="Background Illustration" class="absolute -z-10 w-full" />
   <Header titleHeader={title} />
-  <body class="container mx-auto">
+  <body>
     <slot />
     <Footer />
   </body>
+
+
 </html>

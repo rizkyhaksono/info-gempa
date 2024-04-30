@@ -1,13 +1,9 @@
 ---
+import { text } from "../components/primitives"
+
 var thisYear = new Date().getFullYear()
 ---
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p>© {thisYear} - Build by <a href="https://github.com/rizkyhaksono">Rizky Haksono</a></p>
-      </div>
-    </div>
-  </div>
+<footer class="container mx-auto text-center mt-10 bg-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-2xl my-2 px-4">
+  <p class={text({ size: "sm" })}>© {thisYear} - Build by <a href="https://github.com/rizkyhaksono">Rizky Haksono</a></p>
 </footer>
