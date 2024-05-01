@@ -2,13 +2,13 @@ import type Gempa from "../types/gempa"
 
 export default function Table({ data }: Readonly<{ data: any }>) {
   return (
-    <div className="bg-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg p-5 my-10 overflow-x-auto">
+    <div className="bg-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg p-5 mt-5 mb-10">
       <div className="flex flex-col text-[#18191b]">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
             <div className="overflow-hidden">
               <table className="min-w-full text-left text-sm font-light text-surface">
-                <thead className="border-b border-neutral-200 font-medium dark:border-white/10">
+                <thead className="border-b border-[#18191b] font-medium">
                   <tr>
                     <th scope="col" className="px-6 py-4">
                       No
