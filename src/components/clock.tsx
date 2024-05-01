@@ -1,6 +1,5 @@
-// make a realtime clock component
-
 import { useState, useEffect } from "react"
+import { subtitle } from "./primitives"
 
 const Clock = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString())
@@ -13,7 +12,7 @@ const Clock = () => {
     return () => clearInterval(interval)
   }, [])
 
-  return <div>{time}</div>
+  return <div className={subtitle({ color: "foreground", size: "sm" })}>{time}</div>
 }
 
 export default Clock

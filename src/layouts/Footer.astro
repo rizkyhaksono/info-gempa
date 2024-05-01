@@ -4,6 +4,6 @@ import { text } from "../components/primitives"
 var thisYear = new Date().getFullYear()
 ---
 
-<footer class="container mx-auto text-center mt-10 bg-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-2xl my-2 px-4">
-  <p class={text({ size: "sm" })}>© {thisYear} - Build by <a href="https://github.com/rizkyhaksono">Rizky Haksono</a></p>
+<footer class="container mx-auto text-center bg-white bg-opacity-[40%] backdrop-blur-xl backdrop-filter rounded-lg py-4 px-4">
+  <p class={text({ size: "sm", class: "font-medium" })}>Build by <a class="hover:text-gray-100 duration-300 hover:underline-offset-4 hover:underline" href="https://github.com/rizkyhaksono" target="_blank">Rizky Haksono</a> - {thisYear}</p>
 </footer>

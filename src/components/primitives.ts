@@ -4,7 +4,7 @@ export const title = tv({
   base: "font-semibold inline",
   variants: {
     color: {
-      foreground: "text-[#FFFFFF] dark:text-[#000000]",
+      foreground: "text-[#FFFFFF] dark:text-[#18191b]",
     },
     size: {
       sm: "text-lg lg:text-xl",
@@ -27,10 +27,10 @@ export const subtitle = tv({
   base: "font-normal inline",
   variants: {
     color: {
-      foreground: "text-[#FFFFFF] dark:text-[#000000]",
+      foreground: "text-[#FFFFFF] dark:text-[#18191b]",
     },
     size: {
-      sm: "text-lg lg:text-xl",
+      sm: "text-base lg:text-lg",
       md: "text-xl lg:text-2xl",
       lg: "text-xl lg:text-3xl",
     },
@@ -41,7 +41,7 @@ export const subtitle = tv({
   compoundVariants: [
     {
       color: ["foreground"],
-      class: "bg-clip-text text-transparent bg-gradient-to-r",
+      class: "",
     },
   ],
 })
@@ -50,7 +50,7 @@ export const text = tv({
   base: "font-normal inline font-normal",
   variants: {
     color: {
-      foreground: "text-[#FFFFFF] dark:text-[#000000]",
+      foreground: "text-[#FFFFFF] dark:text-[#18191b]",
     },
     size: {
       sm: "text-base lg:text-base",

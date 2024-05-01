@@ -4,13 +4,13 @@ import Clock from "../components/clock.tsx"
 import Table from "../components/table.tsx"
 import { title } from "../components/primitives.ts"
 
-const response = await fetch("https://data.bmkg.go.id/DataMKG/TEWS/gempadirasakan.json")
+const response = await fetch(import.meta.env.PUBLIC_BASE_URL)
 const data = await response.json()
 ---
 
 <Layout title="Home Page">
   <div class="container mx-auto">
-    <div class="flex justify-between bg-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-2xl my-2 px-4">
+    <div class="flex justify-between bg-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-2xl mt-5 p-4 items-center">
       <p class={title({ color: "foreground", size: "sm" })}>Daftar Gampa yang Dirasakan</p>
       <Clock client:load />
     </div>
