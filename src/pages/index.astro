@@ -9,17 +9,17 @@ const response = await fetch(import.meta.env.PUBLIC_BASE_URL)
 const data = await response.json()
 ---
 
-<Layout title="Home Page">
-  <div class="container mx-auto">
-    <div class="grid grid-cols-2 gap-4">
-      <div class="bg-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg mt-5 p-4 items-center h-fit">
-        <p class={title({ color: "foreground", size: "sm" })}>Titik Gempa</p>
-        <div>
-          <ShakeMap />
+<Layout title="Home | info Gempa">
+  <div class="container mx-auto px-5">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div>
+        <div class="bg-[#404040] text-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg mt-5 p-4 items-center shadow-2xl">
+          <p class={title({ color: "foreground", size: "sm", class: "shadow-2xl" })}>Titik Gempa Terbaru</p>
         </div>
+        <ShakeMap data={data} />
       </div>
       <div>
-        <div class="flex justify-between bg-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg mt-5 p-4 items-center">
+        <div class="flex justify-between bg-[#404040] text-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg mt-5 p-4 items-center shadow-2xl">
           <p class={title({ color: "foreground", size: "sm" })}>Daftar Gampa yang Dirasakan</p>
           <Clock client:load />
         </div>

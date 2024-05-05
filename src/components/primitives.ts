@@ -4,7 +4,7 @@ export const title = tv({
   base: "font-semibold inline",
   variants: {
     color: {
-      foreground: "text-[#FFFFFF] dark:text-[#18191b]",
+      foreground: "text-white",
     },
     size: {
       sm: "text-lg lg:text-xl",
@@ -27,7 +27,7 @@ export const subtitle = tv({
   base: "font-normal inline",
   variants: {
     color: {
-      foreground: "text-[#FFFFFF] dark:text-[#18191b]",
+      foreground: "text-white",
     },
     size: {
       sm: "text-base lg:text-lg",
