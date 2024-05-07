@@ -1,4 +1,5 @@
 import type Gempa from "../types/gempa"
+import { IoIosWarning } from "react-icons/io"
 
 export default function Table({ data }: Readonly<{ data: any }>) {
   return (
@@ -13,6 +14,9 @@ export default function Table({ data }: Readonly<{ data: any }>) {
                     No
                   </th>
                   <th scope="col" className="px-6 py-4">
+                    Magnitudo
+                  </th>
+                  <th scope="col" className="px-6 py-4">
                     Tanggal
                   </th>
                   <th scope="col" className="px-6 py-4">
@@ -25,9 +29,6 @@ export default function Table({ data }: Readonly<{ data: any }>) {
                     Kedalaman
                   </th>
                   <th scope="col" className="px-6 py-4">
-                    Magnitudo
-                  </th>
-                  <th scope="col" className="px-6 py-4">
                     Wilayah
                   </th>
                   <th scope="col" className="px-6 py-4">
@@ -37,15 +38,32 @@ export default function Table({ data }: Readonly<{ data: any }>) {
               </thead>
               <tbody>
                 {data?.Infogempa?.gempa.map((gempa: Gempa, index: number) => (
-                  <tr key={gempa.Tanggal} className="text-center border-b border-[#737373] font-normal">
+                  <tr key={index + 1} className="text-center border-b border-[#737373] font-normal">
                     <td className="py-2 whitespace-nowrap px-6 font-medium">{index + 1}</td>
+                    <td className="whitespace-nowrap py-4 flex items-center justify-center gap-2">
+                      {gempa.Magnitude > "5.0" ? (
+                        <>
+                          <IoIosWarning className="text-red-500" />
+                          {gempa.Magnitude}
+                        </>
+                      ) : gempa.Magnitude >= "4.0" ? (
+                        <>
+                          <IoIosWarning className="text-yellow-500" />
+                          {gempa.Magnitude}
+                        </>
+                      ) : (
+                        <>
+                          <IoIosWarning className="text-green-500" />
+                          {gempa.Magnitude}
+                        </>
+                      )}
+                    </td>
                     <td className="whitespace-nowrap px-6 py-4">{gempa.Tanggal}</td>
                     <td className="whitespace-nowrap px-6 py-4">{gempa.Jam}</td>
                     <td className="whitespace-nowrap px-6 py-4">
                       {gempa.Lintang} | {gempa.Bujur}
                     </td>
                     <td className="whitespace-nowrap py-4">{gempa.Kedalaman}</td>
-                    <td className="whitespace-nowrap py-4">{gempa.Magnitude}</td>
                     <td className="text-start whitespace-nowrap px-6 py-4">{gempa.Wilayah}</td>
                     <td className="text-start whitespace-nowrap px-6 py-4">{gempa.Dirasakan}</td>
                   </tr>

@@ -16,14 +16,14 @@ const data = await response.json()
         <div class="bg-[#404040] text-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg mt-5 p-4 items-center shadow-2xl">
           <p class={title({ color: "foreground", size: "sm", class: "shadow-2xl" })}>Titik Gempa Terbaru</p>
         </div>
-        <ShakeMap data={data} />
+        <ShakeMap data={data} client:load />
       </div>
       <div>
         <div class="flex justify-between bg-[#404040] text-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg mt-5 p-4 items-center shadow-2xl">
           <p class={title({ color: "foreground", size: "sm" })}>Daftar Gampa yang Dirasakan</p>
           <Clock client:load />
         </div>
-        <Table data={data} />
+        <Table data={data} client:load />
       </div>
     </div>
   </div>

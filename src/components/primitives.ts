@@ -7,7 +7,7 @@ export const title = tv({
       foreground: "text-white",
     },
     size: {
-      sm: "text-lg lg:text-xl",
+      sm: "text-sm lg:text-xl",
       md: "text-2xl lg:text-3xl",
       lg: "text-3xl lg:text-4xl",
     },
@@ -30,7 +30,7 @@ export const subtitle = tv({
       foreground: "text-white",
     },
     size: {
-      sm: "text-base lg:text-lg",
+      sm: "text-sm lg:text-lg",
       md: "text-xl lg:text-2xl",
       lg: "text-xl lg:text-3xl",
     },
@@ -53,7 +53,7 @@ export const text = tv({
       foreground: "text-[#FFFFFF] dark:text-[#18191b]",
     },
     size: {
-      sm: "text-base lg:text-base",
+      sm: "text-sm lg:text-base",
       md: "text-lg lg:text-xl",
       lg: "text-lg lg:text-xl",
     },
