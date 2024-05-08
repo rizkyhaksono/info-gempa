@@ -1,6 +1,7 @@
 ---
 import { title, text } from "../components/primitives"
-import MenuHeader from "../components/menu-header"
+import { GiHamburgerMenu } from "react-icons/gi"
+import { IoClose } from "react-icons/io5"
 
 interface Props {
   titleHeader: string
@@ -24,9 +25,12 @@ const { titleHeader } = Astro.props
         <img src="https://rizkyhaksono.natee.my.id/favicon.ico" class="h-6" alt="Logo" />
         <span class={title({ color: "foreground", size: "sm" })}>Info Gempa</span>
       </a>
-      <MenuHeader client:load />
-      <div class="hidden w-full md:block md:w-auto">
-        <ul class="font-medium flex flex-col md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-6 md:mt-0 md:border-0">
+      <button id="button-header" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-current rounded-lg md:hidden focus:border-white">
+        <GiHamburgerMenu className="text-white w-4 h-4 hamburger-icon" />
+        <IoClose className="text-white w-5 h-5 hidden close-icon" />
+      </button>
+      <div id="menu-items" class="hidden w-full md:block md:w-auto">
+        <ul class="font-medium flex flex-col md:p-0 mt-4 rounded-lg md:flex-row md:space-x-6 md:mt-0 max-[766px]:flex-row max-[766px]:gap-4 max-[766px]:px-1">
           <a
             href="/"
             class={text({ size: "sm", class: `${pathname === "/" ? "text-white font-semibold underline underline-offset-4 hover:underline hover:text-[#a3a3a3] duration-300" : "text-[#a3a3a3] hover:text-[#d4d4d4] duration-300"}` })}>Home</a
@@ -41,3 +45,21 @@ const { titleHeader } = Astro.props
     </div>
   </nav>
 </head>
+
+<script>
+  // const button = document.getElementById("button-header")
+  // const hamburgerIcon = button?.querySelector(".hamburger-icon")
+  // const closeIcon = button?.querySelector(".close-icon")
+
+  // button?.addEventListener("click", () => {
+  //   hamburgerIcon?.classList.toggle("hidden")
+  //   closeIcon?.classList.toggle("hidden")
+  // })
+
+  const button = document.getElementById("button-header")
+  const menuItems = document.getElementById("menu-items")
+
+  button?.addEventListener("click", () => {
+    menuItems?.classList.toggle("hidden")
+  })
+</script>
