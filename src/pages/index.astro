@@ -1,14 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Clock from "../components/clock.tsx"
-import Table from "../components/table.tsx"
-import ShakeMap from "../components/shake-map"
-import { title } from "../components/primitives.ts"
+import Layout from "../layouts/Layout.astro";
+import Clock from "../components/clock.tsx";
+import Table from "../components/table.tsx";
+import ShakeMap from "../components/shake-map";
+import { title } from "../components/primitives.ts";
 
-const response = await fetch(import.meta.env.PUBLIC_BASE_URL)
-const data = await response.json()
+const response = await fetch(import.meta.env.PUBLIC_BASE_URL);
+const data = await response.json();
 
-export const prerender = false
+export const prerender = false;
 ---
 
 <Layout title="Home | info Gempa">
