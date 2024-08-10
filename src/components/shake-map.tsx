@@ -4,18 +4,18 @@ export default function ShakeMap({ data }: Readonly<{ data: any }>) {
 
   function formatDate(inputDate: string) {
     const monthNames = {
-      Januari: "01",
-      Februari: "02",
+      Jan: "01",
+      Feb: "02",
       Maret: "03",
       April: "04",
       Mei: "05",
       Jun: "06",
       Jul: "07",
-      Agustus: "08",
-      September: "09",
-      Oktober: "10",
-      November: "11",
-      Desember: "12",
+      Agu: "08",
+      Sep: "09",
+      Okt: "10",
+      Nov: "11",
+      Des: "12",
     };
 
     const parts = inputDate.split(" ");
