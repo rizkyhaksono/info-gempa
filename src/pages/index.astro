@@ -6,7 +6,16 @@ import ShakeMap from "../components/shake-map";
 import { title } from "../components/primitives.ts";
 
 const response = await fetch(import.meta.env.PUBLIC_BASE_URL);
-const data = await response.json();
+const rawData = await response.text();
+
+let data;
+try {
+  const sanitizedData = rawData.replace(/[\n\r]/g, "\\n");
+  data = JSON.parse(sanitizedData);
+} catch (error) {
+  console.error("Error parsing JSON:", error);
+  data = null;
+}
 
 export const prerender = false;
 ---
