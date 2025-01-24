@@ -1,24 +1,32 @@
 ---
-import Layout from "../../layouts/Layout.astro"
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="About | Info Gempa">
-  <div class="container mx-auto px-5">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-0 lg:gap-5">
-      <div class="col-span-4 lg:col-span-1 bg-[#404040] text-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg my-5 p-4 shadow-2xl">
-        <p class="text-sm">
-          Website ini dibuat menggunakan <span class="text-blue-500">@astrojs</span>
-        </p>
-      </div>
-      <div class="col-span-4 bg-[#404040] text-white bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg my-5 p-4 shadow-2xl">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus explicabo repudiandae illum quasi obcaecati minima nam repellat, eos temporibus officia impedit numquam iste ad corrupti, dolores accusantium iusto officiis
-        similique fuga praesentium reprehenderit molestias exercitationem maiores molestiae? Nam, architecto, molestiae cum reiciendis beatae iusto rerum dolor dicta dolores dignissimos nobis. Alias, laudantium quidem ratione recusandae
-        reprehenderit modi deleniti tempora autem exercitationem nesciunt praesentium ab mollitia accusamus. Molestiae error optio earum cupiditate ipsum sit, aliquid fugiat quas provident molestias necessitatibus excepturi doloremque,
-        accusantium, natus magnam deleniti placeat sunt illum ratione dolores laboriosam deserunt ipsam veritatis aut! Perferendis temporibus animi, eos veniam dolores facere odio autem maxime soluta corrupti voluptates debitis quaerat,
-        vitae dolor. Illo id placeat obcaecati optio ratione reprehenderit cum ullam laboriosam voluptatem dolores tempora dolorem, molestias dignissimos culpa fuga beatae? Ex distinctio maxime libero cumque ducimus ipsum laborum iste ut?
-        Ipsa quibusdam dolor excepturi quia obcaecati possimus debitis, officiis aut tenetur, error, rerum cupiditate nihil laborum labore molestias non modi repudiandae a sapiente quisquam. Eius tenetur quis voluptates qui tempore
-        dignissimos, ut in quas perferendis voluptate incidunt aspernatur praesentium, recusandae fuga aliquam alias iste quaerat labore eaque ipsa repellat libero expedita? Rem doloremque pariatur cumque sed libero quia possimus?
+  <main class="container mx-auto px-5">
+    <div class="max-w-4xl mx-auto my-8">
+      <div class="bg-neutral-700/40 backdrop-blur-lg rounded-lg shadow-2xl overflow-hidden">
+        <div class="p-8">
+          <h1 class="text-3xl font-bold text-white mb-6">About Info Gempa</h1>
+
+          <div class="prose prose-invert">
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              Website ini adalah website yang menampilkan informasi gempa terkini di Indonesia. Data yang ditampilkan diambil dari BMKG (Badan Meteorologi, Klimatologi, dan Geofisika) Indonesia.
+            </p>
+
+            <div class="mb-6">
+              <h2 class="text-2xl font-bold text-white mb-4">Website Status</h2>
+              <iframe src="https://uptime.natee.my.id" width="100%" height="500px" style="background: transparent"></iframe>
+            </div>
+
+            <div class="border-t border-gray-600 pt-6 mt-6">
+              <p class="text-sm text-gray-400">
+                Built with <a href="https://astro.build" class="text-blue-400 hover:text-blue-300 transition-colors" target="_blank">@astrojs</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </Layout>

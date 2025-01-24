@@ -1,6 +1,31 @@
 import type Gempa from "../types/gempa"
 import { IoIosWarning } from "react-icons/io"
 
+const MagnitudeWarning = ({ magnitude }: { magnitude: string }) => {
+  if (magnitude > "5.0") {
+    return (
+      <>
+        <IoIosWarning className="text-red-500" />
+        {magnitude}
+      </>
+    )
+  }
+  if (magnitude >= "4.0") {
+    return (
+      <>
+        <IoIosWarning className="text-yellow-500" />
+        {magnitude}
+      </>
+    )
+  }
+  return (
+    <>
+      <IoIosWarning className="text-green-500" />
+      {magnitude}
+    </>
+  )
+}
+
 export default function Table({ data }: Readonly<{ data: any }>) {
   return (
     <div className="bg-[#404040] bg-opacity-[40%] backdrop-blur-lg backdrop-filter rounded-lg p-5 mt-5 mb-10 shadow-2xl">
@@ -38,25 +63,10 @@ export default function Table({ data }: Readonly<{ data: any }>) {
               </thead>
               <tbody>
                 {data?.Infogempa?.gempa.map((gempa: Gempa, index: number) => (
-                  <tr key={index + 1} className="text-center border-b border-[#737373] font-normal">
+                  <tr key={index + 1} className="text-center border-b border-[#737373] font-normal hover:bg-[#525252] hover:bg-opacity-50 transition duration-200">
                     <td className="py-2 whitespace-nowrap px-6 font-medium">{index + 1}</td>
                     <td className="whitespace-nowrap py-4 flex items-center justify-center gap-2">
-                      {gempa.Magnitude > "5.0" ? (
-                        <>
-                          <IoIosWarning className="text-red-500" />
-                          {gempa.Magnitude}
-                        </>
-                      ) : gempa.Magnitude >= "4.0" ? (
-                        <>
-                          <IoIosWarning className="text-yellow-500" />
-                          {gempa.Magnitude}
-                        </>
-                      ) : (
-                        <>
-                          <IoIosWarning className="text-green-500" />
-                          {gempa.Magnitude}
-                        </>
-                      )}
+                      <MagnitudeWarning magnitude={gempa.Magnitude} />
                     </td>
                     <td className="whitespace-nowrap px-6 py-4">{gempa.Tanggal}</td>
                     <td className="whitespace-nowrap px-6 py-4">{gempa.Jam}</td>

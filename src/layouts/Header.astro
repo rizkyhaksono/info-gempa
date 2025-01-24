@@ -1,28 +1,28 @@
 ---
-import { title, text } from "../components/primitives"
-import { GiHamburgerMenu } from "react-icons/gi"
-import { IoClose } from "react-icons/io5"
+import { title, text } from "../components/primitives";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 
 interface Props {
-  titleHeader: string
+  titleHeader: string;
 }
 
-const { pathname } = Astro.url
-const { titleHeader } = Astro.props
+const { pathname } = Astro.url;
+const { titleHeader } = Astro.props;
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="description" content="Astro description" />
   <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="https://rizkyhaksono.natee.my.id/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="https://natee.me/favicon.ico" />
   <meta name="generator" content={Astro.generator} />
   <title>{titleHeader}</title>
 
   <nav class="bg-[#404040] sticky top-0 z-50 bg-opacity-[40%] backdrop-blur-xl backdrop-filter shadow-inner">
     <div class="container flex flex-wrap items-center justify-between mx-auto px-4 py-3">
       <a href="/" class="flex items-center space-x-3">
-        <img src="https://rizkyhaksono.natee.my.id/favicon.ico" class="h-6" alt="Logo" />
+        <img src="https://natee.me/favicon.ico" class="h-6" alt="Logo" />
         <span class={title({ color: "foreground", size: "sm" })}>Info Gempa</span>
       </a>
       <button id="button-header" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-current rounded-lg md:hidden focus:border-white">
@@ -56,10 +56,10 @@ const { titleHeader } = Astro.props
   //   closeIcon?.classList.toggle("hidden")
   // })
 
-  const button = document.getElementById("button-header")
-  const menuItems = document.getElementById("menu-items")
+  const button = document.getElementById("button-header");
+  const menuItems = document.getElementById("menu-items");
 
   button?.addEventListener("click", () => {
-    menuItems?.classList.toggle("hidden")
-  })
+    menuItems?.classList.toggle("hidden");
+  });
 </script>

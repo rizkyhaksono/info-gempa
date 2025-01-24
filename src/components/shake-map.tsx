@@ -22,9 +22,6 @@ export default function ShakeMap({ data }: Readonly<{ data: any }>) {
     const day = parts[0];
     const monthName = parts[1];
     const year = parts[2];
-    console.log(day);
-    console.log(monthName);
-    console.log(year);
 
     const monthNumber = monthNames[monthName as keyof typeof monthNames];
     const formattedDate = `${year}${monthNumber}${day.padStart(2, "0")}`;
