@@ -6,8 +6,8 @@ export default function ShakeMap({ data }: Readonly<{ data: any }>) {
     const monthNames = {
       Jan: "01",
       Feb: "02",
-      Maret: "03",
-      April: "04",
+      Mar: "03",
+      Apr: "04",
       Mei: "05",
       Jun: "06",
       Jul: "07",
